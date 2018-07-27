@@ -11,7 +11,6 @@ class Common extends Controller
 	{
 		parent::__construct( $request );
 		//执行登录验证
-		//$_SESSION['admin']['admin_id'];
 		if(!session('admin.admin_id'))
 		{
 			$this->redirect('admin/login/login');

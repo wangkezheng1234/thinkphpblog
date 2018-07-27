@@ -56,7 +56,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="fa fa-w fa-user"></i>
-                            admin
+                            {:session('admin.admin_username')}
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -186,10 +186,6 @@
     Powered by hdphp v2.0 © 2016-2022 www.hdphp.com
 </div>
 <script type="text/javascript">
-$(document)(function(){
-	
-	alert(121);
-})
 </script>
 </body>
 </html>

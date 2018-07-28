@@ -12,6 +12,8 @@ class Category extends Controller
         $this->db = new \app\common\model\Category();
     }
     public function index(){
+        $data = db('cate')->select();
+        $this->assign('field',$data);
         return $this->fetch();
     }
     public function store(){

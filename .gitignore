@@ -8,3 +8,4 @@ thinkphp
 runtime
 *.log
 .env
+/application/database.php

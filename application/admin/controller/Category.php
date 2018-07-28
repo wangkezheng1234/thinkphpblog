@@ -27,4 +27,9 @@ class Category extends Controller
         }
         return $this->fetch();
     }
+    public  function addson(){
+        $data = $this->db->where('cate_id',input('param.cate_id'))->find();
+        $this->assign('data',$data);
+        return $this->fetch();
+    }
 }

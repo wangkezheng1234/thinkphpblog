@@ -40,4 +40,18 @@ class Category extends Controller
         $this->assign('data',$data);
         return $this->fetch();
     }
+    public function edit(){
+        if(request()->isPost()){
+            $rs = $this->db->edit(input('post.'));
+            if(!$rs['valid']){
+                $this->error($rs['msg']);exit;
+            }else{
+                $this->success($rs['msg'],'index');exit;
+            }
+        }
+        $rs = $this->db->find(input('param.cate_id'));
+        $this->assign('data',$rs);
+       
+        return $this->fetch();
+    }
 }

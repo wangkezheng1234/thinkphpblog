@@ -28,6 +28,14 @@ class Category extends Controller
         return $this->fetch();
     }
     public  function addson(){
+        if(Request()->isPost()){
+            $rs = $this->db->store(input('post.'));
+            if(!$rs['valid']){
+                $this->error($rs['msg']);exit;
+            }else{
+                $this->success($rs['msg'],'index');
+            }
+        }
         $data = $this->db->where('cate_id',input('param.cate_id'))->find();
         $this->assign('data',$data);
         return $this->fetch();
